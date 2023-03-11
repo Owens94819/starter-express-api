@@ -3,7 +3,7 @@ const ffmpeg = require('fluent-ffmpeg')
 const ffmpegPath = require('ffmpeg-static').path
 const ffprobePath = require('ffprobe-static').path
 
-console.log(ffmpegPath,ffprobePath,require('ffmpeg-static'));
+console.log(require('ffmpeg-static'), ffprobePath);
 
 const https = require('https');
 const express = require('express');
@@ -33,8 +33,8 @@ https.request(options, (req) => {
     //res.status(req.statusCode);
     //res.setHeader('content-type',req.headers['content-type'])
     //req.pipe(res);
-    res.send("OK");
-    console.log(ffmpeg)
+    res.send("OK_1");
+    
 })
 .on('error', (error) => {
   console.error(error);
