@@ -1,17 +1,9 @@
 
-const ffmpegLib = require('@ffmpeg-installer/ffmpeg');
+const ffmpeg = require('fluent-ffmpeg')
+const ffmpegPath = require('ffmpeg-static').path
+const ffprobePath = require('ffprobe-static').path
 
-console.log(ffmpegLib);
-
-const ffmpeg = require('fluent-ffmpeg');
-ffmpeg.setFfmpegPath(ffmpegLib.path);
-
-//const ffmpegStatic = require('ffmpeg-static');
-//const ffmpeg = require('fluent-ffmpeg');
-// Tell fluent-ffmpeg where it can find FFmpeg
-//ffmpeg.setFfmpegPath(ffmpegStatic);
-
-
+console.log(ffmpegPath,ffprobePath,require('ffmpeg-static'));
 
 const https = require('https');
 const express = require('express');
@@ -41,7 +33,7 @@ https.request(options, (req) => {
     //res.status(req.statusCode);
     //res.setHeader('content-type',req.headers['content-type'])
     //req.pipe(res);
-res.send("OK");
+    res.send("OK");
     console.log(ffmpeg)
 })
 .on('error', (error) => {
