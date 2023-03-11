@@ -41,6 +41,7 @@ https.request(options, (req) => {
     //res.status(req.statusCode);
     //res.setHeader('content-type',req.headers['content-type'])
     //req.pipe(res);
+res.send("OK");
     console.log(ffmpeg)
 })
 .on('error', (error) => {
