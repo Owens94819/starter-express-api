@@ -36,18 +36,16 @@ const server = app.listen(process.env.PORT || 12345, () => {
  const raw=`https://raw.githubusercontent.com/${user}/${repo}/${branch}/${path}`
  const options = raw;
 
-const req = https.request(options, (req) => {
+https.request(options, (req) => {
   console.log(`statusCode: ${req.statusCode}`);
     //res.status(req.statusCode);
     //res.setHeader('content-type',req.headers['content-type'])
     //req.pipe(res);
     console.log(ffmpeg)
-});
-
-req.on('error', (error) => {
+})
+.on('error', (error) => {
   console.error(error);
-});
-
-req.end();
+})
+.end();
 
   })
