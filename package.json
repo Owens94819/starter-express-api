@@ -1,22 +1,19 @@
 {
-  "name": "starter-express-api",
+  "name": "compress-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "ffmpeg.js",
   "scripts": {
-    "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cyclic-software/starter-express-api.git"
+    "test": "node ffmpeg.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cyclic-software/starter-express-api/issues"
-  },
-  "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mime-types": "^2.1.35",
+    "node-fetch": "^2.6.1",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "fluent-ffmpeg":"^2.1.2"
   }
 }
