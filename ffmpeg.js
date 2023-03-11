@@ -33,7 +33,7 @@ const server = app.listen(process.env.PORT || 12345, () => {
 //const inputFileUrl = 'https://example.com/inputfile.mp4';
 //const outputFileUrl = 'https://example.com/outputfile.mp4';
 const inputFileUrl = raw;
-const outputFileUrl = 'https://compress.cyclic.app/upload';
+const outputFileUrl = 'https://git.cyclic.app/upload';
 const targetResolution = '50%'; // target resolution, in this case 640x360
 
 const options = {
