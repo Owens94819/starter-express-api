@@ -2,9 +2,9 @@
   "name": "compress-app",
   "version": "1.0.0",
   "description": "",
-  "main": "ffmpeg.js",
+  "main": "index.js",
   "scripts": {
-    "test": "node ffmpeg.js"
+    "test": "node index.js"
   },
   "author": "",
   "license": "ISC",
