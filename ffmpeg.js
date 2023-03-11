@@ -45,12 +45,14 @@ const options = {
   }
 };
 
-const request = https.request(options, (response) => {
-  console.log(`statusCode: ${response.statusCode}`);
-  
-  response.on('data', (data) => {
-    console.log(JSON.parse(data));
-  });
+const request = https.request(options, (req) => {
+  console.log(`statusCode: ${req.statusCode}`);
+    res.status(req.statusCode);
+    res.setHeader('content-type',req.headers['content-type'])
+    req.pipe(res);
+  //response.on('data', (data) => {
+   // console.log(JSON.parse(data));
+ // });
 });
 
 request.on('error', (error) => {
