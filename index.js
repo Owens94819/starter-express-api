@@ -7,6 +7,14 @@ ffmpeg.setFfmpegPath(ffmpegPath)
 //ffmpeg.setFfprobePath(ffprobePath)
 
 //console.log(require('ffmpeg-static').path,"new");
+const { Writable } = require('stream');
+
+const outStream = new Writable({
+  write(chunk, encoding, callback) {
+    console.log("incoming output...",chunk.toString(). length);
+    callback();
+  }
+});
 
 const https = require('https');
 const express = require('express');
@@ -45,7 +53,7 @@ const videoBitrate = '500k';
 const audioBitrate = '128k';
 
 ffmpeg(req)
-  //.output(outputStream)
+  .output(outStream)
   .videoCodec('libx264')
   .size('50%')
   .videoFilters('scale=trunc(iw/2)*2:trunc(ih/2)*2')
