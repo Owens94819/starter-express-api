@@ -44,7 +44,7 @@ https.request(options, (req) => {
     //res.status(req.statusCode);
     //res.setHeader('content-type',req.headers['content-type'])
     //req.pipe(res);
-    res.send("OK_1");
+    
    // const inputStream = fs.createReadStream('path/to/input/video.mp4');
 //const outputStream = fs.createWriteStream('path/to/output/compressed.mp4');
 
@@ -56,7 +56,7 @@ ffmpeg(req)
   .output(outStream)
   .videoCodec('libx264')
   .size('50%')
-  .videoFilters('scale=trunc(iw/2)*2:trunc(ih/2)*2')
+  //.videoFilters('scale=trunc(iw/2)*2:trunc(ih/2)*2')
   .audioCodec('aac')
   .audioBitrate(audioBitrate)
   .outputOptions([
@@ -70,6 +70,7 @@ ffmpeg(req)
     console.log('Compression finished');
   })
   .run();
+res.send("OK_2");
 })
 .on('error', (error) => {
   console.error(error);
