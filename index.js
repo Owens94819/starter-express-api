@@ -6,7 +6,7 @@ const ffmpegPath = require('ffmpeg-static').path
 ffmpeg.setFfmpegPath(ffmpegPath)
 //ffmpeg.setFfprobePath(ffprobePath)
 
-console.log(require('ffmpeg-static'),"new");
+console.log(require('ffmpeg-static').path,"new");
 
 const https = require('https');
 const express = require('express');
