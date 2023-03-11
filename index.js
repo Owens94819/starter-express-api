@@ -1,9 +1,12 @@
 
 const ffmpeg = require('fluent-ffmpeg')
 const ffmpegPath = require('ffmpeg-static').path
-const ffprobePath = require('ffprobe-static').path
+//const ffprobePath = require('ffprobe-static').path
 
-console.log(require('ffmpeg-static'), ffprobePath);
+ffmpeg.setFfmpegPath(ffmpegPath)
+//ffmpeg.setFfprobePath(ffprobePath)
+
+console.log(require('ffmpeg-static'),"new");
 
 const https = require('https');
 const express = require('express');
