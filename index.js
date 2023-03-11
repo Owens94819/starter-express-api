@@ -16,15 +16,16 @@ const server = app.listen(process.env.PORT || 12345, () => {
     var port = server.address().port;
     console.log(`http://localhost:${port}\n-----------`);
   });
-
+var fs = require('fs');
   const user="owens94819";
   const repo="owens94819";
   const branch="main";
   const path="JavaScript VUE TUTORIAL in 60 Seconds_ ----‍-- _shorts(480P).mp4";
   
  app.use("/upload",function(req,res) {
+   fs.writeFileSync("file.txt","hello file")
     console.log("we got some data");
-    res.send("OK");
+    res.send(fs.readFileSync("file.txt"));
   });
   
   app.use("/compress",function(req,res) {
