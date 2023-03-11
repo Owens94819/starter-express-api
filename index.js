@@ -64,7 +64,7 @@ ffmpeg()
     .outputOptions([
         '-movflags frag_keyframe+empty_moov'
     ])
-    .pipe(outStream, { end: true });
+    .pipe(outStream, { end: true })
   //.videoFilters('scale=trunc(iw/2)*2:trunc(ih/2)*2')
   //.audioCodec('aac')
 //  .audioBitrate(audioBitrate)
