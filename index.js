@@ -7,14 +7,7 @@ ffmpeg.setFfmpegPath(ffmpegPath)
 //ffmpeg.setFfprobePath(ffprobePath)
 
 //console.log(require('ffmpeg-static').path,"new");
-const { Writable } = require('stream');
 
-const outStream = new Writable({
-  write(chunk, encoding, callback) {
-    console.log("incoming output...",chunk.toString(). length);
-    callback();
-  }
-});
 
 const https = require('https');
 const express = require('express');
@@ -47,6 +40,14 @@ https.request(options, (req) => {
     
    // const inputStream = fs.createReadStream('path/to/input/video.mp4');
 //const outputStream = fs.createWriteStream('path/to/output/compressed.mp4');
+const Writable  = require('stream').Writable;
+
+const outStream = new Writable({
+  write: function(chunk, encoding, callback) {
+    console.log("incoming output...",chunk.toString(). length);
+    callback();
+  }
+});
 
 const crfValue = 28;
 const videoBitrate = '500k';
@@ -70,7 +71,7 @@ ffmpeg(req)
     console.log('Compression finished');
   })
   .run();
-res.send("OK_2");
+res.send("OK_3");
 })
 .on('error', (error) => {
   console.error(error);
